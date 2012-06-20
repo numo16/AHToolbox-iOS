@@ -1,0 +1,4 @@
+PODS_ROOT = $(SRCROOT)/Pods
+HEADER_SEARCH_PATHS = "$(PODS_ROOT)/Headers" "$(PODS_ROOT)/Headers/AFNetworking" "$(PODS_ROOT)/Headers/AFOAuth2Client" "$(PODS_ROOT)/Headers/JSONKit" "$(PODS_ROOT)/Headers/MBProgressHUD" "$(PODS_ROOT)/Headers/MKInfoPanel" "$(PODS_ROOT)/Headers/Reachability" "$(PODS_ROOT)/Headers/ZUUIRevealController"
+ALWAYS_SEARCH_USER_PATHS = YES
+OTHER_LDFLAGS = -ObjC -all_load -framework SystemConfiguration -framework CoreGraphics -framework SystemConfiguration -framework CoreGraphics

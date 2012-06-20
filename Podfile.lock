@@ -1,0 +1,17 @@
+PODS:
+  - AFNetworking (1.0RC1)
+  - AFOAuth2Client (0.0.1)
+  - JSONKit (1.5pre)
+  - MBProgressHUD (0.5)
+  - MKInfoPanel (0.0.1)
+  - Reachability (3.0.0)
+  - ZUUIRevealController (0.9.6)
+
+DEPENDENCIES:
+  - AFNetworking
+  - AFOAuth2Client
+  - JSONKit
+  - MBProgressHUD
+  - MKInfoPanel
+  - Reachability
+  - ZUUIRevealController
