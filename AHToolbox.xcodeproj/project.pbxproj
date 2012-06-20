@@ -17,6 +17,8 @@
 		B8229F3B159179E2006AEE53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8229F3A159179E2006AEE53 /* ViewController.m */; };
 		B8229F3E159179E2006AEE53 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8229F3C159179E2006AEE53 /* ViewController.xib */; };
 		B8229F5215917CB8006AEE53 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8229F5115917CB8006AEE53 /* QuartzCore.framework */; };
+		B8229F64159181DF006AEE53 /* AHAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B8229F63159181DF006AEE53 /* AHAPIClient.m */; };
+		B8229F67159184CE006AEE53 /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B8229F66159184CE006AEE53 /* URLParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		B8229F4F15917B8F006AEE53 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		B8229F5015917B9B006AEE53 /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		B8229F5115917CB8006AEE53 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B8229F62159181DF006AEE53 /* AHAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHAPIClient.h; sourceTree = "<group>"; };
+		B8229F63159181DF006AEE53 /* AHAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHAPIClient.m; sourceTree = "<group>"; };
+		B8229F65159184CE006AEE53 /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLParser.h; sourceTree = "<group>"; };
+		B8229F66159184CE006AEE53 /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,10 @@
 			children = (
 				B8229F4F15917B8F006AEE53 /* Macros.h */,
 				B8229F5015917B9B006AEE53 /* Const.h */,
+				B8229F62159181DF006AEE53 /* AHAPIClient.h */,
+				B8229F63159181DF006AEE53 /* AHAPIClient.m */,
+				B8229F65159184CE006AEE53 /* URLParser.h */,
+				B8229F66159184CE006AEE53 /* URLParser.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -219,6 +229,8 @@
 				B8229F34159179E2006AEE53 /* main.m in Sources */,
 				B8229F38159179E2006AEE53 /* AppDelegate.m in Sources */,
 				B8229F3B159179E2006AEE53 /* ViewController.m in Sources */,
+				B8229F64159181DF006AEE53 /* AHAPIClient.m in Sources */,
+				B8229F67159184CE006AEE53 /* URLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
