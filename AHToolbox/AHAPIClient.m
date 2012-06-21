@@ -40,11 +40,20 @@
 - (void)startAuthorize {
   NSLog(@"Starting authorization");
   
-  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/user/authorizations/new?client_id=%@&redirect_uri=%@", [NSString stringWithCString:kAH_BASE_URL encoding:NSUTF8StringEncoding], [NSString stringWithCString:kAH_CLIENT_ID encoding:NSUTF8StringEncoding], [NSString stringWithCString:kAH_REDIRECT encoding:NSUTF8StringEncoding]]];
+  if([UserDefaults objectForKey:@"oauth_token"] == nil) {
   
-  BOOL result = [[UIApplication sharedApplication] openURL:url];
-  if (!result) {
-    NSLog(@"*** %s: cannot open url \"%@\"", __PRETTY_FUNCTION__, url);
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/user/authorizations/new?client_id=%@&redirect_uri=%@", [NSString stringWithCString:kAH_BASE_URL encoding:NSUTF8StringEncoding], [NSString stringWithCString:kAH_CLIENT_ID encoding:NSUTF8StringEncoding], [NSString stringWithCString:kAH_REDIRECT encoding:NSUTF8StringEncoding]]];
+    
+    BOOL result = [[UIApplication sharedApplication] openURL:url];
+    if (!result) {
+      NSLog(@"*** %s: cannot open url \"%@\"", __PRETTY_FUNCTION__, url);
+    }
+  } else {
+    NSString *token = [UserDefaults stringForKey:@"oauth_token"];
+    
+    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", token]];
+    
+    [self setDefaultHeader:@"Accept" value:@"application/json"];
   }
 }
 
