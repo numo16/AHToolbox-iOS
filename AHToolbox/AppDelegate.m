@@ -21,8 +21,14 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
+    AHAPIClient *apiClient = [AHAPIClient sharedClient];
+    [apiClient startAuthorize];
+  
     ApplicationMenuViewController *back = [[ApplicationMenuViewController alloc] init];
     SelectedApplicationViewController *front = [[SelectedApplicationViewController alloc] init];
+  
+    apiClient.delegate = back;
+    [apiClient retrieveApplications];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:front];
     
@@ -31,8 +37,7 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
   
-    AHAPIClient *apiClient = [AHAPIClient sharedClient];
-    [apiClient startAuthorize];
+    
   
     return YES;
 }
@@ -41,7 +46,11 @@
     
     AHAPIClient *apiClient = [AHAPIClient sharedClient];
   
-    return [apiClient handleOpenURL:url];
+    [apiClient handleOpenURL:url];
+  
+    
+  
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

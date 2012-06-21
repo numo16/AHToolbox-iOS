@@ -9,14 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "AFHTTPClient.h"
 
+@protocol AHAPIClientDelegate <NSObject>
+@optional
+- (void)didReceiveResponseWithResults:(NSArray*)results;
+
+@end
+
 @interface AHAPIClient : AFHTTPClient
 
 @property (nonatomic, strong) NSString* code;
-@property (nonatomic, strong) NSMutableDictionary* token;
+@property (nonatomic, strong) NSString* token;
+@property (assign) id<AHAPIClientDelegate> delegate;
 
 + (AHAPIClient *)sharedClient;
 - (void)startAuthorize;
 - (BOOL)handleOpenURL:(NSURL*)url;
-- (NSArray*)retrieveApplications;
+- (void)retrieveApplications;
 
 @end

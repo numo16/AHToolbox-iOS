@@ -30,11 +30,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-  
-  tableview.delegate = self;
-  tableview.dataSource = self;
-  
-  applications = [[NSMutableArray alloc] init];
 }
 
 - (void)viewDidUnload
@@ -45,17 +40,17 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-  AHAPIClient *c = [AHAPIClient sharedClient];
-  
-  [applications addObjectsFromArray:[c retrieveApplications]];
-  
-  [tableview reloadData];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark -
+#pragma mark AHAPIClientDelegate
+
+- (void)didReceiveResponseWithResults:(NSArray *)results {
+  applications = [NSMutableArray arrayWithArray:results];
+  [tableview reloadData];
 }
 
 #pragma mark -
@@ -76,7 +71,7 @@
   
   Application *a = (Application*)[applications objectAtIndex:indexPath.row];
   
-  cell.textLabel.text = a.name;
+  cell.textLabel.text = [a valueForKey:@"name"];
   
   return cell;
 }
