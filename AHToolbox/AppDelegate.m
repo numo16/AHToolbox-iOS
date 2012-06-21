@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "URLParser.h"
+#import "AHAPIClient.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
@@ -26,9 +27,10 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    URLParser *parser = [[URLParser alloc] initWithUrlString:[url absoluteString]];
+    
+    AHAPIClient *apiClient = [AHAPIClient sharedClient];
   
-    return YES;
+    return [apiClient handleOpenURL:url];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -11,7 +11,10 @@
 
 @interface AHAPIClient : AFHTTPClient
 
+@property (nonatomic, strong) NSString* code;
+
 + (AHAPIClient *)sharedClient;
-- (BOOL)authenticateUserWithCode:(NSString*)code;
+- (void)startAuthorize;
+- (BOOL)handleOpenURL:(NSURL*)url;
 
 @end

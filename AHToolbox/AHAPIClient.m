@@ -8,9 +8,11 @@
 
 #import "AHAPIClient.h"
 #import "AFJSONRequestOperation.h"
+#import "URLParser.h"
 #import "AFOAuth2Client.h"
 
 @implementation AHAPIClient
+@synthesize code;
 
 + (AHAPIClient *)sharedClient {
   static AHAPIClient* _sharedClient = nil;
@@ -35,8 +37,31 @@
   return self;
 }
 
-- (BOOL)authenticateUserWithCode:(NSString *)code {
-  return YES;
+- (void)startAuthorize {
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/user/authorizations/new?client_id=%@&redirect_uri=%@", kAH_BASE_URL, kAH_CLIENT_ID, kAH_REDIRECT]];
+  
+  BOOL result = [[UIApplication sharedApplication] openURL:url];
+  if (!result) {
+    NSLog(@"*** %s: cannot open url \"%@\"", __PRETTY_FUNCTION__, url);
+  }
+}
+
+- (BOOL)handleOpenURL:(NSURL *)url {
+  URLParser *parser = [[URLParser alloc] initWithUrlString:[url absoluteString]];
+  code = [parser valueForVariable:@"code"];
+  
+  __block BOOL success = YES;
+  
+  NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:kAH_CLIENT_ID, @"client_id", kAH_SECRET_KEY, @"client_secret", code, @"code", nil];
+  
+  [self postPath:@"/tokens" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSLog(@"Reponse: %@", responseObject);
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"Error: %@", error);
+    success = NO;
+  }];
+  
+  return success;
 }
 
 @end

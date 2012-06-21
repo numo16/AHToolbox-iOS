@@ -12,5 +12,6 @@
 #define kAH_BASE_URL "https://appharbor.com"
 #define kAH_CLIENT_ID "4ec26c89-a30a-494d-81cb-1d047e43d235"
 #define kAH_SECRET_KEY "6ce1a282-7ed0-4661-bd5f-a6fe0183b86c"
+#define kAH_REDIRECT "ahtoolbox://appharbor/"
 
 #endif
