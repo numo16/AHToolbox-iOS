@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Application;
+
 @interface SelectedApplicationViewController : UIViewController
+
+@property (nonatomic, strong) Application *app;
 
 @end

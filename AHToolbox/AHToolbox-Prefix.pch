@@ -16,4 +16,5 @@
   #import "MKInfoPanel.h"
   #import "AppDelegate.h"
   #import "AHAPIClient.h"
+  #import "AFJSONRequestOperation.h"
 #endif

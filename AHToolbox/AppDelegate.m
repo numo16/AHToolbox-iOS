@@ -26,9 +26,6 @@
   
     ApplicationMenuViewController *back = [[ApplicationMenuViewController alloc] init];
     SelectedApplicationViewController *front = [[SelectedApplicationViewController alloc] init];
-  
-    apiClient.delegate = back;
-    [apiClient retrieveApplications];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:front];
     

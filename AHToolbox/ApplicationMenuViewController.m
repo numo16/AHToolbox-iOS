@@ -8,13 +8,17 @@
 
 #import "ApplicationMenuViewController.h"
 #import "Application.h"
+#import "RevealViewController.h"
+#import "SelectedApplicationViewController.h"
 
 @interface ApplicationMenuViewController ()
-
+- (void)getUser;
+- (void)loadApplications;
 @end
 
 @implementation ApplicationMenuViewController
 @synthesize tableview;
+@synthesize userLabel;
 @synthesize applications;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,11 +34,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+  
+    [self getUser];
+    [self loadApplications];
+    
 }
 
 - (void)viewDidUnload
 {
   [self setTableview:nil];
+  [self setUserLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -45,12 +54,67 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark -
-#pragma mark AHAPIClientDelegate
+- (void)getUser {
+  NSString *t = [UserDefaults stringForKey:@"oauth_token"];
+  
+  NSString *urlString = [NSString stringWithFormat:@"%@/user",[NSString stringWithCString:kAH_BASE_URL encoding:NSUTF8StringEncoding], t];
+  
+  NSLog(@"Request URL: %@", urlString);
+  
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  [request setValue:[NSString stringWithFormat:@"BEARER %@", t] forHTTPHeaderField:@"Authorization"];
+  
+  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    
+    NSLog(@"Response: %@", JSON);
+    
+    NSString *user = [JSON valueForKey:@"username"];
+    
+    userLabel.text = [NSString stringWithFormat:@"%@", user];
+    
+  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
+    NSLog(@"Error: %@", error);
+  }];
+  
+  [operation start];
+}
 
-- (void)didReceiveResponseWithResults:(NSArray *)results {
-  applications = [NSMutableArray arrayWithArray:results];
-  [tableview reloadData];
+- (void)loadApplications {
+  NSMutableArray *array = [[NSMutableArray alloc] init];
+  
+  NSString *t = [UserDefaults stringForKey:@"oauth_token"];
+  
+  NSString *urlString = [NSString stringWithFormat:@"%@/applications",[NSString stringWithCString:kAH_BASE_URL encoding:NSUTF8StringEncoding], t];
+  
+  NSLog(@"Request URL: %@", urlString);
+  
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  [request setValue:[NSString stringWithFormat:@"BEARER %@", t] forHTTPHeaderField:@"Authorization"];
+  
+  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    
+    NSLog(@"Response: %@", JSON);
+    
+    for(NSDictionary *dict in JSON) {
+      [array addObject:[Application fromDict:dict]];
+    }
+    
+    NSLog(@"Number of apps: %i", [array count]);
+    
+    applications = [NSMutableArray arrayWithArray:array];
+    [tableview reloadData];
+    
+  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
+    NSLog(@"Error: %@", error);
+  }];
+  
+  [operation start];
 }
 
 #pragma mark -

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ApplicationMenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AHAPIClientDelegate>
+@interface ApplicationMenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (strong, nonatomic) NSMutableArray *applications;
 
 @end
