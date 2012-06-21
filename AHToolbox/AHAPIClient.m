@@ -54,6 +54,9 @@
     [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", token]];
     
     [self setDefaultHeader:@"Accept" value:@"application/json"];
+    
+    NSLog(@"Token exists, %@, setting auth value and moving on", token);
+    NSLog(@"Header: %@ & %@", [self defaultValueForHeader:@"Authorization"], [self defaultValueForHeader:@"Accept"]);
   }
 }
 
@@ -76,6 +79,7 @@
     
     [self setDefaultHeader:@"Accept" value:@"application/json"];
     
+    [UserDefaults setValue:[parser valueForVariable:@"access_token"] forKey:@"oauth_token"];
     
     NSLog(@"Header: %@ & %@", [self defaultValueForHeader:@"Authorization"], [self defaultValueForHeader:@"Accept"]);
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
