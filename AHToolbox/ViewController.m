@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MKInfoPanel.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+  
+  [NotificationCenter addObserver:self selector:@selector(ahAuthenticationPass) name:@"AHAuthenticationPass" object:nil];
+  
+  [NotificationCenter addObserver:self selector:@selector(ahAuthenticationFail) name:@"AHAuthenticationFail" object:nil];
 }
 
 - (void)viewDidUnload
@@ -29,6 +34,14 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
   return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)ahAuthenticationPass {
+  [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"Authentication Success" subtitle:@"Successfully authenticated with App Harbor"];
+}
+
+- (void)ahAuthenticationFail {
+  [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"Authentication Failure" subtitle:@"Failed to authenticate with App Harbor"];
 }
 
 @end
