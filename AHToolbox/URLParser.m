@@ -28,6 +28,23 @@
   return self;
 }
 
+- (id)initWithParamString:(NSString*)params {
+  self = [super init];
+  if (self != nil) {
+    NSString *string = params;
+    NSScanner *scanner = [NSScanner scannerWithString:string];
+    
+    NSString *tempString;
+    NSMutableArray *vars = [NSMutableArray new];
+
+    while ([scanner scanUpToString:@"&" intoString:&tempString]) {
+      [vars addObject:[tempString copy]];
+    }
+    self.variables = vars;
+  }
+  return self;
+}
+
 - (NSString *)valueForVariable:(NSString *)varName {
   for (NSString *var in self.variables) {
     if ([var length] > [varName length]+1 && [[var substringWithRange:NSMakeRange(0, [varName length]+1)] isEqualToString:[varName stringByAppendingString:@"="]]) {

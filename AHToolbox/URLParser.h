@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSArray *variables;
 
 - (id)initWithUrlString:(NSString*)url;
+- (id)initWithParamString:(NSString*)params;
 - (NSString*)valueForVariable:(NSString*)varName;
 
 @end

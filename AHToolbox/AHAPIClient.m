@@ -7,6 +7,7 @@
 //
 
 #import "AHAPIClient.h"
+#import "AFHTTPRequestOperation.h"
 #import "AFJSONRequestOperation.h"
 #import "URLParser.h"
 #import "AFOAuth2Client.h"
@@ -30,10 +31,6 @@
   
   if(!self)
     return nil;
-  
-  [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-  
-  [self setDefaultHeader:@"Accept" value:@"application/json"];
   
   NSLog(@"Intializing APIClient");
   
@@ -60,8 +57,18 @@
   NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithCString:kAH_CLIENT_ID encoding:NSUTF8StringEncoding], @"client_id", [NSString stringWithCString:kAH_SECRET_KEY encoding:NSUTF8StringEncoding], @"client_secret", code, @"code", nil];
   
   [self postPath:@"/tokens" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    NSLog(@"Reponse: %@", responseObject);
+    NSLog(@"Reponse: %@", operation.responseString);
+    
+    URLParser *parser = [[URLParser alloc] initWithParamString:operation.responseString];
+    
+    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", [parser valueForVariable:@"access_token"]]];
+    
     [NotificationCenter postNotificationName:@"AHAuthenticationPass" object:self];
+    
+    [self setDefaultHeader:@"Accept" value:@"application/json"];
+    
+    
+    NSLog(@"Header: %@ & %@", [self defaultValueForHeader:@"Authorization"], [self defaultValueForHeader:@"Accept"]);
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"Error: %@", error);
     [NotificationCenter postNotificationName:@"AHAuthenticationFail" object:self];
