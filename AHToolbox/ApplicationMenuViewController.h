@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ApplicationMenuViewController : UIViewController
+@interface ApplicationMenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) NSMutableArray *applications;
 
 @end

@@ -11,9 +11,10 @@
 #import "AFJSONRequestOperation.h"
 #import "URLParser.h"
 #import "AFOAuth2Client.h"
+#import "Application.h"
 
 @implementation AHAPIClient
-@synthesize code;
+@synthesize code, token;
 
 + (AHAPIClient *)sharedClient {
   static AHAPIClient* _sharedClient = nil;
@@ -33,6 +34,7 @@
     return nil;
   
   NSLog(@"Intializing APIClient");
+  token = [[NSMutableDictionary alloc] init];
   
   return self;
 }
@@ -40,7 +42,7 @@
 - (void)startAuthorize {
   NSLog(@"Starting authorization");
   
-  if([UserDefaults objectForKey:@"oauth_token"] == nil) {
+  //if([UserDefaults objectForKey:@"oauth_token"] == nil) {
   
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/user/authorizations/new?client_id=%@&redirect_uri=%@", [NSString stringWithCString:kAH_BASE_URL encoding:NSUTF8StringEncoding], [NSString stringWithCString:kAH_CLIENT_ID encoding:NSUTF8StringEncoding], [NSString stringWithCString:kAH_REDIRECT encoding:NSUTF8StringEncoding]]];
     
@@ -48,16 +50,16 @@
     if (!result) {
       NSLog(@"*** %s: cannot open url \"%@\"", __PRETTY_FUNCTION__, url);
     }
-  } else {
-    NSString *token = [UserDefaults stringForKey:@"oauth_token"];
-    
-    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", token]];
-    
-    [self setDefaultHeader:@"Accept" value:@"application/json"];
-    
-    NSLog(@"Token exists, %@, setting auth value and moving on", token);
-    NSLog(@"Header: %@ & %@", [self defaultValueForHeader:@"Authorization"], [self defaultValueForHeader:@"Accept"]);
-  }
+//  } else {
+//    NSString *token = [UserDefaults stringForKey:@"oauth_token"];
+//    
+//    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", token]];
+//    
+//    [self setDefaultHeader:@"Accept" value:@"application/json"];
+//    
+//    NSLog(@"Token exists, %@, setting auth value and moving on", token);
+//    NSLog(@"Header: %@ & %@", [self defaultValueForHeader:@"Authorization"], [self defaultValueForHeader:@"Accept"]);
+//  }
 }
 
 - (BOOL)handleOpenURL:(NSURL *)url {
@@ -73,13 +75,16 @@
     
     URLParser *parser = [[URLParser alloc] initWithParamString:operation.responseString];
     
-    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", [parser valueForVariable:@"access_token"]]];
+//    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", [parser valueForVariable:@"access_token"]]];
     
-    [NotificationCenter postNotificationName:@"AHAuthenticationPass" object:self];
+//    [NotificationCenter postNotificationName:@"AHAuthenticationPass" object:self];
     
     [self setDefaultHeader:@"Accept" value:@"application/json"];
     
-    [UserDefaults setValue:[parser valueForVariable:@"access_token"] forKey:@"oauth_token"];
+//    [UserDefaults setValue:[parser valueForVariable:@"access_token"] forKey:@"oauth_token"];
+    
+    [self setAuthorizationHeaderWithToken:[parser valueForVariable:@"access_token"]];
+    [token setValue:[parser valueForVariable:@"access_token"] forKey:@"access_token"];
     
     NSLog(@"Header: %@ & %@", [self defaultValueForHeader:@"Authorization"], [self defaultValueForHeader:@"Accept"]);
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -88,6 +93,24 @@
   }];
   
   return YES;
+}
+
+- (NSArray *)retrieveApplications {
+  NSMutableArray *array = [[NSMutableArray alloc] init];
+  
+  [self getPath:@"/applications" parameters:token success:^(AFHTTPRequestOperation *operation, id JSON) {
+    
+    NSLog(@"Response: %@", operation.responseString);
+    
+//    for(NSDictionary *dict in JSON) {
+//      [array addObject:[Application fromDict:dict]];
+//    }
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
+    NSLog(@"Error: %@", error);
+  }];
+  
+  return array;
 }
 
 @end

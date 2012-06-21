@@ -22,6 +22,7 @@
 		B822DC6D1592CB020041E429 /* ApplicationMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B822DC6B1592CB020041E429 /* ApplicationMenuViewController.xib */; };
 		B822DC711592CB220041E429 /* SelectedApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC6F1592CB210041E429 /* SelectedApplicationViewController.m */; };
 		B822DC721592CB220041E429 /* SelectedApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B822DC701592CB220041E429 /* SelectedApplicationViewController.xib */; };
+		B822DC791592CE330041E429 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC781592CE330041E429 /* Application.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,9 @@
 		B822DC6E1592CB210041E429 /* SelectedApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedApplicationViewController.h; sourceTree = "<group>"; };
 		B822DC6F1592CB210041E429 /* SelectedApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedApplicationViewController.m; sourceTree = "<group>"; };
 		B822DC701592CB220041E429 /* SelectedApplicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedApplicationViewController.xib; sourceTree = "<group>"; };
+		B822DC731592CD910041E429 /* AHDomainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHDomainObject.h; sourceTree = "<group>"; };
+		B822DC771592CE330041E429 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		B822DC781592CE330041E429 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		B8229F2D159179E2006AEE53 /* AHToolbox */ = {
 			isa = PBXGroup;
 			children = (
+				B822DC761592CD9C0041E429 /* Domain */,
 				B8229F4E15917B48006AEE53 /* Helpers */,
 				B8229F4D15917B42006AEE53 /* Xib */,
 				B8229F4B15917B3A006AEE53 /* ViewControllers */,
@@ -157,6 +162,16 @@
 				B8229F66159184CE006AEE53 /* URLParser.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B822DC761592CD9C0041E429 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B822DC731592CD910041E429 /* AHDomainObject.h */,
+				B822DC771592CE330041E429 /* Application.h */,
+				B822DC781592CE330041E429 /* Application.m */,
+			);
+			name = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +262,7 @@
 				B822DC681592C0EE0041E429 /* RevealViewController.m in Sources */,
 				B822DC6C1592CB020041E429 /* ApplicationMenuViewController.m in Sources */,
 				B822DC711592CB220041E429 /* SelectedApplicationViewController.m in Sources */,
+				B822DC791592CE330041E429 /* Application.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

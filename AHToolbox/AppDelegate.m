@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "URLParser.h"
-#import "AHAPIClient.h"
 #import "RevealViewController.h"
 #import "ApplicationMenuViewController.h"
 #import "SelectedApplicationViewController.h"

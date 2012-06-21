@@ -12,9 +12,11 @@
 @interface AHAPIClient : AFHTTPClient
 
 @property (nonatomic, strong) NSString* code;
+@property (nonatomic, strong) NSMutableDictionary* token;
 
 + (AHAPIClient *)sharedClient;
 - (void)startAuthorize;
 - (BOOL)handleOpenURL:(NSURL*)url;
+- (NSArray*)retrieveApplications;
 
 @end
