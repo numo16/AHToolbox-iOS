@@ -10,8 +10,8 @@
 #import "URLParser.h"
 #import "AHAPIClient.h"
 #import "RevealViewController.h"
-#import "DrawerMenuViewController.h"
-#import "ApplicationsViewController.h"
+#import "ApplicationMenuViewController.h"
+#import "SelectedApplicationViewController.h"
 
 @implementation AppDelegate
 
@@ -22,8 +22,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
-    DrawerMenuViewController *back = [[DrawerMenuViewController alloc] init];
-    ApplicationsViewController *front = [[ApplicationsViewController alloc] init];
+    ApplicationMenuViewController *back = [[ApplicationMenuViewController alloc] init];
+    SelectedApplicationViewController *front = [[SelectedApplicationViewController alloc] init];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:front];
     
