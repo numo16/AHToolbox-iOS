@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "URLParser.h"
 #import "AHAPIClient.h"
-#import "ViewController.h"
+#import "RevealViewController.h"
+#import "DrawerMenuViewController.h"
+#import "ApplicationsViewController.h"
 
 @implementation AppDelegate
 
@@ -19,8 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+  
+    DrawerMenuViewController *back = [[DrawerMenuViewController alloc] init];
+    ApplicationsViewController *front = [[ApplicationsViewController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:front];
+    
+      // Override point for customization after application launch.
+    self.viewController = [[RevealViewController alloc] initWithFrontViewController:nav rearViewController:back];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
   

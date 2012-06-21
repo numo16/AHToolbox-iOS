@@ -14,11 +14,14 @@
 		B8229F32159179E2006AEE53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8229F30159179E2006AEE53 /* InfoPlist.strings */; };
 		B8229F34159179E2006AEE53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8229F33159179E2006AEE53 /* main.m */; };
 		B8229F38159179E2006AEE53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8229F37159179E2006AEE53 /* AppDelegate.m */; };
-		B8229F3B159179E2006AEE53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8229F3A159179E2006AEE53 /* ViewController.m */; };
-		B8229F3E159179E2006AEE53 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8229F3C159179E2006AEE53 /* ViewController.xib */; };
 		B8229F5215917CB8006AEE53 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8229F5115917CB8006AEE53 /* QuartzCore.framework */; };
 		B8229F64159181DF006AEE53 /* AHAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B8229F63159181DF006AEE53 /* AHAPIClient.m */; };
 		B8229F67159184CE006AEE53 /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B8229F66159184CE006AEE53 /* URLParser.m */; };
+		B822DC5D1592BEB70041E429 /* ApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC5B1592BEB60041E429 /* ApplicationsViewController.m */; };
+		B822DC5E1592BEB70041E429 /* ApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B822DC5C1592BEB60041E429 /* ApplicationsViewController.xib */; };
+		B822DC621592BFF10041E429 /* DrawerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B822DC611592BFF10041E429 /* DrawerMenuViewController.xib */; };
+		B822DC651592BFFC0041E429 /* DrawerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC641592BFFC0041E429 /* DrawerMenuViewController.m */; };
+		B822DC681592C0EE0041E429 /* RevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC671592C0EE0041E429 /* RevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +37,6 @@
 		B8229F35159179E2006AEE53 /* AHToolbox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AHToolbox-Prefix.pch"; sourceTree = "<group>"; };
 		B8229F36159179E2006AEE53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8229F37159179E2006AEE53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B8229F39159179E2006AEE53 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B8229F3A159179E2006AEE53 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B8229F3D159179E2006AEE53 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		B8229F4F15917B8F006AEE53 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		B8229F5015917B9B006AEE53 /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		B8229F5115917CB8006AEE53 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -44,6 +44,14 @@
 		B8229F63159181DF006AEE53 /* AHAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHAPIClient.m; sourceTree = "<group>"; };
 		B8229F65159184CE006AEE53 /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLParser.h; sourceTree = "<group>"; };
 		B8229F66159184CE006AEE53 /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
+		B822DC5A1592BEB60041E429 /* ApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationsViewController.h; sourceTree = "<group>"; };
+		B822DC5B1592BEB60041E429 /* ApplicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationsViewController.m; sourceTree = "<group>"; };
+		B822DC5C1592BEB60041E429 /* ApplicationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicationsViewController.xib; sourceTree = "<group>"; };
+		B822DC611592BFF10041E429 /* DrawerMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerMenuViewController.xib; sourceTree = "<group>"; };
+		B822DC631592BFFC0041E429 /* DrawerMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerMenuViewController.h; sourceTree = "<group>"; };
+		B822DC641592BFFC0041E429 /* DrawerMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerMenuViewController.m; sourceTree = "<group>"; };
+		B822DC661592C0EE0041E429 /* RevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealViewController.h; sourceTree = "<group>"; };
+		B822DC671592C0EE0041E429 /* RevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +127,12 @@
 		B8229F4B15917B3A006AEE53 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B8229F39159179E2006AEE53 /* ViewController.h */,
-				B8229F3A159179E2006AEE53 /* ViewController.m */,
+				B822DC631592BFFC0041E429 /* DrawerMenuViewController.h */,
+				B822DC641592BFFC0041E429 /* DrawerMenuViewController.m */,
+				B822DC5A1592BEB60041E429 /* ApplicationsViewController.h */,
+				B822DC5B1592BEB60041E429 /* ApplicationsViewController.m */,
+				B822DC661592C0EE0041E429 /* RevealViewController.h */,
+				B822DC671592C0EE0041E429 /* RevealViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -128,7 +140,8 @@
 		B8229F4D15917B42006AEE53 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				B8229F3C159179E2006AEE53 /* ViewController.xib */,
+				B822DC611592BFF10041E429 /* DrawerMenuViewController.xib */,
+				B822DC5C1592BEB60041E429 /* ApplicationsViewController.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -198,7 +211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8229F32159179E2006AEE53 /* InfoPlist.strings in Resources */,
-				B8229F3E159179E2006AEE53 /* ViewController.xib in Resources */,
+				B822DC5E1592BEB70041E429 /* ApplicationsViewController.xib in Resources */,
+				B822DC621592BFF10041E429 /* DrawerMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,9 +242,11 @@
 			files = (
 				B8229F34159179E2006AEE53 /* main.m in Sources */,
 				B8229F38159179E2006AEE53 /* AppDelegate.m in Sources */,
-				B8229F3B159179E2006AEE53 /* ViewController.m in Sources */,
 				B8229F64159181DF006AEE53 /* AHAPIClient.m in Sources */,
 				B8229F67159184CE006AEE53 /* URLParser.m in Sources */,
+				B822DC5D1592BEB70041E429 /* ApplicationsViewController.m in Sources */,
+				B822DC651592BFFC0041E429 /* DrawerMenuViewController.m in Sources */,
+				B822DC681592C0EE0041E429 /* RevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,14 +259,6 @@
 				B8229F31159179E2006AEE53 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		B8229F3C159179E2006AEE53 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B8229F3D159179E2006AEE53 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
