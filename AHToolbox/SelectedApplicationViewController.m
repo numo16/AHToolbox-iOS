@@ -55,6 +55,10 @@
   } else {
     [labelHolderView setHidden:NO];
   }
+  
+  HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+  [self.navigationController.view addSubview:HUD];
+  HUD.delegate = self;
 }
 
 - (void)viewDidUnload

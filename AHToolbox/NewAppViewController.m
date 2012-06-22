@@ -75,6 +75,8 @@
       break;
   }
   
+  [appNameField resignFirstResponder];
+  
   if ([name length] > 0) {
     NSDictionary *body = [[NSDictionary alloc] initWithObjectsAndKeys:name, @"name", region, @"region_identifier", nil];
     

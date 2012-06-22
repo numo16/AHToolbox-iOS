@@ -10,7 +10,9 @@
 
 @class Application;
 
-@interface SelectedApplicationViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>;
+@interface SelectedApplicationViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MBProgressHUDDelegate> {
+  MBProgressHUD *HUD;
+}
 
 @property (nonatomic, strong) Application *app;
 @property (weak, nonatomic) IBOutlet UIView *labelHolderView;
