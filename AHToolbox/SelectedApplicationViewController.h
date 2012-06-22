@@ -10,8 +10,16 @@
 
 @class Application;
 
-@interface SelectedApplicationViewController : UIViewController 
+@interface SelectedApplicationViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>;
 
 @property (nonatomic, strong) Application *app;
+@property (weak, nonatomic) IBOutlet UIView *labelHolderView;
+@property (weak, nonatomic) IBOutlet UILabel *buildCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *errorCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *collaboratorCountLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UILabel *selectAppLabel;
+
+- (void)loadApplicationData;
 
 @end

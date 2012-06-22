@@ -113,6 +113,8 @@
     applications = [NSMutableArray arrayWithArray:array];
     [tableview reloadData];
     
+    HideNetworkActivityIndicator();
+    
   } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
     [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
     NSLog(@"Error: %@", error);
@@ -164,6 +166,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  
+  Application *a = (Application*)[applications objectAtIndex:indexPath.row];
+  
+  RevealViewController *revealController = [self getRevealViewController];
+  
+  SelectedApplicationViewController *front = [[SelectedApplicationViewController alloc] init];
+  front.app = a;
+  
+  UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:front];
+  
+  [revealController setFrontViewController:nav animated:NO];
 }
 
 - (IBAction)addApplication:(id)sender {

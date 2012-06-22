@@ -60,7 +60,7 @@
 						<float key="IBUISectionHeaderHeight">22</float>
 						<float key="IBUISectionFooterHeight">22</float>
 					</object>
-					<object class="IBUIToolbar" id="421647012">
+					<object class="IBUIToolbar" id="276972535">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">266</int>
 						<string key="NSFrameSize">{320, 44}</string>
@@ -71,20 +71,26 @@
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<array class="NSMutableArray" key="IBUIItems">
-							<object class="IBUIBarButtonItem" id="461495468">
+							<object class="IBUIBarButtonItem" id="242333657">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUIToolbar" ref="421647012"/>
+								<reference key="IBUIToolbar" ref="276972535"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="541323469">
+							<object class="IBUIBarButtonItem" id="802388609">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="421647012"/>
+								<reference key="IBUIToolbar" ref="276972535"/>
 								<int key="IBUISystemItemIdentifier">4</int>
+							</object>
+							<object class="IBUIBarButtonItem" id="65045744">
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<float key="IBUIWidth">65</float>
+								<reference key="IBUIToolbar" ref="276972535"/>
+								<int key="IBUISystemItemIdentifier">6</int>
 							</object>
 						</array>
 					</object>
-					<object class="IBUILabel" id="951533048">
+					<object class="IBUILabel" id="773120165">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{9, 8}, {291, 28}}</string>
@@ -160,7 +166,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">userLabel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="951533048"/>
+						<reference key="destination" ref="773120165"/>
 					</object>
 					<int key="connectionID">12</int>
 				</object>
@@ -183,7 +189,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">addApplication:</string>
-						<reference key="source" ref="541323469"/>
+						<reference key="source" ref="802388609"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">19</int>
@@ -202,8 +208,8 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="151178916"/>
-							<reference ref="951533048"/>
-							<reference ref="421647012"/>
+							<reference ref="773120165"/>
+							<reference ref="276972535"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -225,27 +231,33 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
-						<reference key="object" ref="421647012"/>
+						<reference key="object" ref="276972535"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="461495468"/>
-							<reference ref="541323469"/>
+							<reference ref="242333657"/>
+							<reference ref="802388609"/>
+							<reference ref="65045744"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
-						<reference key="object" ref="951533048"/>
+						<reference key="object" ref="773120165"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
-						<reference key="object" ref="461495468"/>
-						<reference key="parent" ref="421647012"/>
+						<reference key="object" ref="242333657"/>
+						<reference key="parent" ref="276972535"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">18</int>
-						<reference key="object" ref="541323469"/>
-						<reference key="parent" ref="421647012"/>
+						<reference key="object" ref="802388609"/>
+						<reference key="parent" ref="276972535"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">20</int>
+						<reference key="object" ref="65045744"/>
+						<reference key="parent" ref="276972535"/>
 					</object>
 				</array>
 			</object>
@@ -259,13 +271,14 @@
 				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">19</int>
+			<int key="maxID">20</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
