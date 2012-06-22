@@ -50,15 +50,20 @@
   tableview.delegate = self;
   tableview.dataSource = self;
   
+  HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+  [self.navigationController.view addSubview:HUD];
+  HUD.delegate = self;
+  
   if (app == nil || [app.name length] == 0) {
     [selectAppLabel setHidden:NO];
   } else {
     [labelHolderView setHidden:NO];
+    
+    [HUD show:YES];
+    [self loadApplicationData];
   }
   
-  HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-  [self.navigationController.view addSubview:HUD];
-  HUD.delegate = self;
+  
 }
 
 - (void)viewDidUnload
@@ -80,7 +85,113 @@
 }
 
 - (void)loadApplicationData {
+  [self retrieveBuilds];
+  [self retrieveErrors];
+  [self retrieveCollaborators];
+}
+
+- (void)retrieveBuilds {
+  NSMutableArray *array = [[NSMutableArray alloc] init];
   
+  NSString *t = [UserDefaults stringForKey:@"oauth_token"];
+  
+  NSString *urlString = [NSString stringWithFormat:@"%@/applications/%@/builds",[NSString stringWithCString:kAH_BASE_URL encoding:NSUTF8StringEncoding], app.slug];
+  
+  NSLog(@"Request URL: %@", urlString);
+  
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  [request setValue:[NSString stringWithFormat:@"BEARER %@", t] forHTTPHeaderField:@"Authorization"];
+  
+  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    
+    NSLog(@"Response: %@", JSON);
+    
+    for(NSDictionary *dict in JSON) {
+      [array addObject:dict];
+    }
+    
+    NSLog(@"Number of apps: %i", [array count]);
+    
+    buildCountLabel.text = [NSString stringWithFormat:@"%i", [array count]];
+    
+  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
+    NSLog(@"Error: %@", error);
+  }];
+  
+  [operation start];
+}
+
+- (void)retrieveErrors {
+  NSMutableArray *array = [[NSMutableArray alloc] init];
+  
+  NSString *t = [UserDefaults stringForKey:@"oauth_token"];
+  
+  NSString *urlString = [NSString stringWithFormat:@"%@/applications/%@/errors",[NSString stringWithCString:kAH_BASE_URL encoding:NSUTF8StringEncoding], app.slug];
+  
+  NSLog(@"Request URL: %@", urlString);
+  
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  [request setValue:[NSString stringWithFormat:@"BEARER %@", t] forHTTPHeaderField:@"Authorization"];
+  
+  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    
+    NSLog(@"Response: %@", JSON);
+    
+    for(NSDictionary *dict in JSON) {
+      [array addObject:dict];
+    }
+    
+    NSLog(@"Number of apps: %i", [array count]);
+    
+    errorCountLabel.text = [NSString stringWithFormat:@"%i", [array count]];
+    
+  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
+    NSLog(@"Error: %@", error);
+  }];
+  
+  [operation start];
+}
+
+- (void)retrieveCollaborators {
+  NSMutableArray *array = [[NSMutableArray alloc] init];
+  
+  NSString *t = [UserDefaults stringForKey:@"oauth_token"];
+  
+  NSString *urlString = [NSString stringWithFormat:@"%@/applications/%@/collaborators",[NSString stringWithCString:kAH_BASE_URL encoding:NSUTF8StringEncoding], app.slug];
+  
+  NSLog(@"Request URL: %@", urlString);
+  
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  [request setValue:[NSString stringWithFormat:@"BEARER %@", t] forHTTPHeaderField:@"Authorization"];
+  
+  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    
+    NSLog(@"Response: %@", JSON);
+    
+    for(NSDictionary *dict in JSON) {
+      [array addObject:dict];
+    }
+    
+    NSLog(@"Number of apps: %i", [array count]);
+    
+    collaboratorCountLabel.text = [NSString stringWithFormat:@"%i", [array count]];
+    
+    [HUD hide:YES];
+    
+  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
+    NSLog(@"Error: %@", error);
+  }];
+  
+  [operation start];
 }
 
 #pragma mark -
