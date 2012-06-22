@@ -23,6 +23,8 @@
 		B822DC711592CB220041E429 /* SelectedApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC6F1592CB210041E429 /* SelectedApplicationViewController.m */; };
 		B822DC721592CB220041E429 /* SelectedApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B822DC701592CB220041E429 /* SelectedApplicationViewController.xib */; };
 		B822DC791592CE330041E429 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC781592CE330041E429 /* Application.m */; };
+		B89ADAED15941F37000143D0 /* NewAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89ADAEB15941F37000143D0 /* NewAppViewController.m */; };
+		B89ADAEE15941F37000143D0 /* NewAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89ADAEC15941F37000143D0 /* NewAppViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,9 @@
 		B822DC731592CD910041E429 /* AHDomainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHDomainObject.h; sourceTree = "<group>"; };
 		B822DC771592CE330041E429 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		B822DC781592CE330041E429 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		B89ADAEA15941F37000143D0 /* NewAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAppViewController.h; sourceTree = "<group>"; };
+		B89ADAEB15941F37000143D0 /* NewAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAppViewController.m; sourceTree = "<group>"; };
+		B89ADAEC15941F37000143D0 /* NewAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAppViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +143,8 @@
 				B822DC6A1592CB020041E429 /* ApplicationMenuViewController.m */,
 				B822DC6E1592CB210041E429 /* SelectedApplicationViewController.h */,
 				B822DC6F1592CB210041E429 /* SelectedApplicationViewController.m */,
+				B89ADAEA15941F37000143D0 /* NewAppViewController.h */,
+				B89ADAEB15941F37000143D0 /* NewAppViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -147,6 +154,7 @@
 			children = (
 				B822DC701592CB220041E429 /* SelectedApplicationViewController.xib */,
 				B822DC6B1592CB020041E429 /* ApplicationMenuViewController.xib */,
+				B89ADAEC15941F37000143D0 /* NewAppViewController.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 				B8229F32159179E2006AEE53 /* InfoPlist.strings in Resources */,
 				B822DC6D1592CB020041E429 /* ApplicationMenuViewController.xib in Resources */,
 				B822DC721592CB220041E429 /* SelectedApplicationViewController.xib in Resources */,
+				B89ADAEE15941F37000143D0 /* NewAppViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +272,7 @@
 				B822DC6C1592CB020041E429 /* ApplicationMenuViewController.m in Sources */,
 				B822DC711592CB220041E429 /* SelectedApplicationViewController.m in Sources */,
 				B822DC791592CE330041E429 /* Application.m in Sources */,
+				B89ADAED15941F37000143D0 /* NewAppViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

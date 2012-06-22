@@ -10,6 +10,7 @@
 #import "Application.h"
 #import "RevealViewController.h"
 #import "SelectedApplicationViewController.h"
+#import "NewAppViewController.h"
 
 @interface ApplicationMenuViewController ()
 - (void)getUser;
@@ -40,8 +41,13 @@
     ShowNetworkActivityIndicator();
   
     [self getUser];
-    [self loadApplications];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  ShowNetworkActivityIndicator();
+  
+  [self loadApplications];
 }
 
 - (void)viewDidUnload
@@ -180,5 +186,9 @@
 }
 
 - (IBAction)addApplication:(id)sender {
+  NewAppViewController *vc = [[NewAppViewController alloc] init];
+  UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+  
+  [self presentModalViewController:nav animated:YES];
 }
 @end
