@@ -23,6 +23,12 @@
 		B822DC711592CB220041E429 /* SelectedApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC6F1592CB210041E429 /* SelectedApplicationViewController.m */; };
 		B822DC721592CB220041E429 /* SelectedApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B822DC701592CB220041E429 /* SelectedApplicationViewController.xib */; };
 		B822DC791592CE330041E429 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC781592CE330041E429 /* Application.m */; };
+		B84C39591594344300510322 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C39581594344300510322 /* Build.m */; };
+		B84C395D1594353200510322 /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C395C1594353200510322 /* Commit.m */; };
+		B84C39601594368800510322 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C395F1594368800510322 /* Error.m */; };
+		B84C3963159436DC00510322 /* Exception.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C3962159436DC00510322 /* Exception.m */; };
+		B84C39661594380E00510322 /* Collaborator.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C39651594380E00510322 /* Collaborator.m */; };
+		B84C39691594389300510322 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C39681594389300510322 /* User.m */; };
 		B89ADAED15941F37000143D0 /* NewAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89ADAEB15941F37000143D0 /* NewAppViewController.m */; };
 		B89ADAEE15941F37000143D0 /* NewAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89ADAEC15941F37000143D0 /* NewAppViewController.xib */; };
 /* End PBXBuildFile section */
@@ -58,6 +64,18 @@
 		B822DC731592CD910041E429 /* AHDomainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHDomainObject.h; sourceTree = "<group>"; };
 		B822DC771592CE330041E429 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		B822DC781592CE330041E429 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		B84C39571594344300510322 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Build.h; sourceTree = "<group>"; };
+		B84C39581594344300510322 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Build.m; sourceTree = "<group>"; };
+		B84C395B1594353200510322 /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
+		B84C395C1594353200510322 /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
+		B84C395E1594368800510322 /* Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
+		B84C395F1594368800510322 /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Error.m; sourceTree = "<group>"; };
+		B84C3961159436DC00510322 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		B84C3962159436DC00510322 /* Exception.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exception.m; sourceTree = "<group>"; };
+		B84C39641594380E00510322 /* Collaborator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collaborator.h; sourceTree = "<group>"; };
+		B84C39651594380E00510322 /* Collaborator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collaborator.m; sourceTree = "<group>"; };
+		B84C39671594389200510322 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B84C39681594389300510322 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		B89ADAEA15941F37000143D0 /* NewAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAppViewController.h; sourceTree = "<group>"; };
 		B89ADAEB15941F37000143D0 /* NewAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAppViewController.m; sourceTree = "<group>"; };
 		B89ADAEC15941F37000143D0 /* NewAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAppViewController.xib; sourceTree = "<group>"; };
@@ -178,6 +196,18 @@
 				B822DC731592CD910041E429 /* AHDomainObject.h */,
 				B822DC771592CE330041E429 /* Application.h */,
 				B822DC781592CE330041E429 /* Application.m */,
+				B84C39571594344300510322 /* Build.h */,
+				B84C39581594344300510322 /* Build.m */,
+				B84C395B1594353200510322 /* Commit.h */,
+				B84C395C1594353200510322 /* Commit.m */,
+				B84C395E1594368800510322 /* Error.h */,
+				B84C395F1594368800510322 /* Error.m */,
+				B84C3961159436DC00510322 /* Exception.h */,
+				B84C3962159436DC00510322 /* Exception.m */,
+				B84C39641594380E00510322 /* Collaborator.h */,
+				B84C39651594380E00510322 /* Collaborator.m */,
+				B84C39671594389200510322 /* User.h */,
+				B84C39681594389300510322 /* User.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -273,6 +303,12 @@
 				B822DC711592CB220041E429 /* SelectedApplicationViewController.m in Sources */,
 				B822DC791592CE330041E429 /* Application.m in Sources */,
 				B89ADAED15941F37000143D0 /* NewAppViewController.m in Sources */,
+				B84C39591594344300510322 /* Build.m in Sources */,
+				B84C395D1594353200510322 /* Commit.m in Sources */,
+				B84C39601594368800510322 /* Error.m in Sources */,
+				B84C3963159436DC00510322 /* Exception.m in Sources */,
+				B84C39661594380E00510322 /* Collaborator.m in Sources */,
+				B84C39691594389300510322 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

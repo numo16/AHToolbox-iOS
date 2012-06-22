@@ -22,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UILabel *selectAppLabel;
 
+@property (strong, nonatomic) NSMutableArray *builds;
+@property (strong, nonatomic) NSMutableArray *errors;
+@property (strong, nonatomic) NSMutableArray *collaborators;
+
 - (void)loadApplicationData;
 
 @end

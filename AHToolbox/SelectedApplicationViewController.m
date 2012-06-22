@@ -9,13 +9,16 @@
 #import "SelectedApplicationViewController.h"
 #import "AFJSONRequestOperation.h"
 #import "Application.h"
+#import "Build.h"
+#import "Error.h"
+#import "Collaborator.h"
 
 @interface SelectedApplicationViewController ()
 
 @end
 
 @implementation SelectedApplicationViewController
-@synthesize app;
+@synthesize app, builds, errors, collaborators;
 @synthesize labelHolderView;
 @synthesize buildCountLabel;
 @synthesize errorCountLabel;
@@ -108,16 +111,16 @@
     
     NSLog(@"Response: %@", JSON);
     
-    for(NSDictionary *dict in JSON) {
-      [array addObject:dict];
+    for(NSDictionary *dict in JSON){
+      [array addObject:[Build objectWithDictionary:dict]];
     }
     
-    NSLog(@"Number of apps: %i", [array count]);
+    builds = [NSMutableArray arrayWithArray:array];
     
-    buildCountLabel.text = [NSString stringWithFormat:@"%i", [array count]];
+    buildCountLabel.text = [NSString stringWithFormat:@"%i", [builds count]];
     
   } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
+    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Builds Retrieval Error" subtitle:@"Unable to retrieve builds"];
     NSLog(@"Error: %@", error);
   }];
   
@@ -142,16 +145,16 @@
     
     NSLog(@"Response: %@", JSON);
     
-    for(NSDictionary *dict in JSON) {
-      [array addObject:dict];
+    for(NSDictionary *dict in JSON){
+      [array addObject:[Error objectWithDictionary:dict]];
     }
     
-    NSLog(@"Number of apps: %i", [array count]);
+    errors = [NSMutableArray arrayWithArray:array];
     
-    errorCountLabel.text = [NSString stringWithFormat:@"%i", [array count]];
+    errorCountLabel.text = [NSString stringWithFormat:@"%i", [errors count]];
     
   } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
+    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Errors Retrieval Error" subtitle:@"Unable to retrieve errors"];
     NSLog(@"Error: %@", error);
   }];
   
@@ -176,18 +179,18 @@
     
     NSLog(@"Response: %@", JSON);
     
-    for(NSDictionary *dict in JSON) {
-      [array addObject:dict];
+    for(NSDictionary *dict in JSON){
+      [array addObject:[Collaborator objectWithDictionary:dict]];
     }
     
-    NSLog(@"Number of apps: %i", [array count]);
+    collaborators = [NSMutableArray arrayWithArray:array];
     
-    collaboratorCountLabel.text = [NSString stringWithFormat:@"%i", [array count]];
+    collaboratorCountLabel.text = [NSString stringWithFormat:@"%i", [collaborators count]];
     
     [HUD hide:YES];
     
   } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Application Retrieval Error" subtitle:@"Unable to retrieve applications"];
+    [MKInfoPanel showPanelInWindow:[ApplicationDelegate window] type:MKInfoPanelTypeError title:@"Collaborator Retrieval Error" subtitle:@"Unable to retrieve collaborators"];
     NSLog(@"Error: %@", error);
   }];
   
