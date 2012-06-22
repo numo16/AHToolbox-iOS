@@ -10,7 +10,7 @@
 
 @class Application;
 
-@interface SelectedApplicationViewController : UIViewController
+@interface SelectedApplicationViewController : UIViewController 
 
 @property (nonatomic, strong) Application *app;
 

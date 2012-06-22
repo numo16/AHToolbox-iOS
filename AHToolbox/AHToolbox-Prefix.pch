@@ -14,6 +14,7 @@
   #import "Macros.h"
   #import "Const.h"
   #import "MKInfoPanel.h"
+  #import "MBProgressHUD.h"
   #import "AppDelegate.h"
   #import "AHAPIClient.h"
   #import "AFJSONRequestOperation.h"

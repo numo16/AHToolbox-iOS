@@ -14,6 +14,8 @@
 @interface ApplicationMenuViewController ()
 - (void)getUser;
 - (void)loadApplications;
+- (RevealViewController*)getRevealViewController;
+- (SelectedApplicationViewController*)getFrontViewController;
 @end
 
 @implementation ApplicationMenuViewController
@@ -34,6 +36,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    ShowNetworkActivityIndicator();
   
     [self getUser];
     [self loadApplications];
@@ -117,6 +121,24 @@
   [operation start];
 }
 
+- (RevealViewController*)getRevealViewController {
+  RevealViewController *revealController = [self.parentViewController isKindOfClass:[RevealViewController class]] ? (RevealViewController *)self.parentViewController : nil;
+  
+  return revealController;
+}
+
+- (SelectedApplicationViewController*)getFrontViewController {
+  RevealViewController *revealController = [self.parentViewController isKindOfClass:[RevealViewController class]] ? (RevealViewController *)self.parentViewController : nil;
+  
+  if ([revealController.frontViewController isKindOfClass:[UINavigationController class]] && [((UINavigationController *)revealController.frontViewController).topViewController isKindOfClass:[SelectedApplicationViewController class]]){
+    SelectedApplicationViewController *front = (SelectedApplicationViewController*)((UINavigationController *) revealController.frontViewController).topViewController;
+    
+    return front;
+  }
+  
+  return nil;
+}
+
 #pragma mark -
 #pragma mark Tableview Delegate
 
@@ -144,4 +166,6 @@
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (IBAction)addApplication:(id)sender {
+}
 @end

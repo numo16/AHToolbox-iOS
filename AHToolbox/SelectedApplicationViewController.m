@@ -7,12 +7,14 @@
 //
 
 #import "SelectedApplicationViewController.h"
+#import "Application.h"
 
 @interface SelectedApplicationViewController ()
 
 @end
 
 @implementation SelectedApplicationViewController
+@synthesize app;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
   
-    self.title = NSLocalizedString(@"Selected Application", @"Selected Application");
+    self.title = NSLocalizedString(app.name, app.name);
     
     if ([self.navigationController.parentViewController respondsToSelector:@selector(revealGesture:)] && [self.navigationController.parentViewController respondsToSelector:@selector(revealToggle:)])
     {

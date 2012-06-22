@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (strong, nonatomic) NSMutableArray *applications;
 
+- (IBAction)addApplication:(id)sender;
 @end
