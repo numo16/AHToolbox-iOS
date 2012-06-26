@@ -9,9 +9,9 @@
 #import "SelectedApplicationViewController.h"
 #import "AFJSONRequestOperation.h"
 #import "Application.h"
-#import "Build.h"
-#import "Error.h"
-#import "Collaborator.h"
+#import "BuildsViewController.h"
+#import "ErrorsViewController.h"
+#import "CollaboratorsViewController.h"
 
 @interface SelectedApplicationViewController ()
 
@@ -112,7 +112,7 @@
     NSLog(@"Response: %@", JSON);
     
     for(NSDictionary *dict in JSON){
-      [array addObject:[Build objectWithDictionary:dict]];
+      [array addObject:dict];
     }
     
     builds = [NSMutableArray arrayWithArray:array];
@@ -146,7 +146,7 @@
     NSLog(@"Response: %@", JSON);
     
     for(NSDictionary *dict in JSON){
-      [array addObject:[Error objectWithDictionary:dict]];
+      [array addObject:dict];
     }
     
     errors = [NSMutableArray arrayWithArray:array];
@@ -180,7 +180,7 @@
     NSLog(@"Response: %@", JSON);
     
     for(NSDictionary *dict in JSON){
-      [array addObject:[Collaborator objectWithDictionary:dict]];
+      [array addObject:dict];
     }
     
     collaborators = [NSMutableArray arrayWithArray:array];
@@ -234,9 +234,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-- (IBAction)addApplication:(id)sender {
+  
+  if (indexPath.row == 0) {
+    BuildsViewController *vc = [[BuildsViewController alloc] init];
+    vc.builds = builds;
+    [self.navigationController pushViewController:vc animated:YES];
+  } else if (indexPath.row == 1) {
+    ErrorsViewController *vc = [[ErrorsViewController alloc] init];
+    vc.errors = errors;
+    [self.navigationController pushViewController:vc animated:YES];
+  } else if (indexPath.row == 2) {
+    CollaboratorsViewController *vc = [[CollaboratorsViewController alloc] init];
+    vc.collaborators = collaborators;
+    [self.navigationController pushViewController:vc animated:YES];
+  }
+  
 }
 
 @end

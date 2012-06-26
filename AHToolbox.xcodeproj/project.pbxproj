@@ -23,6 +23,12 @@
 		B822DC711592CB220041E429 /* SelectedApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC6F1592CB210041E429 /* SelectedApplicationViewController.m */; };
 		B822DC721592CB220041E429 /* SelectedApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B822DC701592CB220041E429 /* SelectedApplicationViewController.xib */; };
 		B822DC791592CE330041E429 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = B822DC781592CE330041E429 /* Application.m */; };
+		B848438A15995DE700995337 /* BuildsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B848438815995DE700995337 /* BuildsViewController.m */; };
+		B848438B15995DE700995337 /* BuildsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B848438915995DE700995337 /* BuildsViewController.xib */; };
+		B84843901599652100995337 /* ErrorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B848438E1599652000995337 /* ErrorsViewController.m */; };
+		B84843911599652100995337 /* ErrorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B848438F1599652000995337 /* ErrorsViewController.xib */; };
+		B8484395159966BA00995337 /* CollaboratorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8484393159966BA00995337 /* CollaboratorsViewController.m */; };
+		B8484396159966BA00995337 /* CollaboratorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8484394159966BA00995337 /* CollaboratorsViewController.xib */; };
 		B84C39591594344300510322 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C39581594344300510322 /* Build.m */; };
 		B84C395D1594353200510322 /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C395C1594353200510322 /* Commit.m */; };
 		B84C39601594368800510322 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C395F1594368800510322 /* Error.m */; };
@@ -64,6 +70,15 @@
 		B822DC731592CD910041E429 /* AHDomainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHDomainObject.h; sourceTree = "<group>"; };
 		B822DC771592CE330041E429 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		B822DC781592CE330041E429 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		B848438715995DE700995337 /* BuildsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsViewController.h; sourceTree = "<group>"; };
+		B848438815995DE700995337 /* BuildsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildsViewController.m; sourceTree = "<group>"; };
+		B848438915995DE700995337 /* BuildsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildsViewController.xib; sourceTree = "<group>"; };
+		B848438D1599652000995337 /* ErrorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorsViewController.h; sourceTree = "<group>"; };
+		B848438E1599652000995337 /* ErrorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorsViewController.m; sourceTree = "<group>"; };
+		B848438F1599652000995337 /* ErrorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorsViewController.xib; sourceTree = "<group>"; };
+		B8484392159966BA00995337 /* CollaboratorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollaboratorsViewController.h; sourceTree = "<group>"; };
+		B8484393159966BA00995337 /* CollaboratorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollaboratorsViewController.m; sourceTree = "<group>"; };
+		B8484394159966BA00995337 /* CollaboratorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollaboratorsViewController.xib; sourceTree = "<group>"; };
 		B84C39571594344300510322 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Build.h; sourceTree = "<group>"; };
 		B84C39581594344300510322 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Build.m; sourceTree = "<group>"; };
 		B84C395B1594353200510322 /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
@@ -163,6 +178,12 @@
 				B822DC6F1592CB210041E429 /* SelectedApplicationViewController.m */,
 				B89ADAEA15941F37000143D0 /* NewAppViewController.h */,
 				B89ADAEB15941F37000143D0 /* NewAppViewController.m */,
+				B848438715995DE700995337 /* BuildsViewController.h */,
+				B848438815995DE700995337 /* BuildsViewController.m */,
+				B848438D1599652000995337 /* ErrorsViewController.h */,
+				B848438E1599652000995337 /* ErrorsViewController.m */,
+				B8484392159966BA00995337 /* CollaboratorsViewController.h */,
+				B8484393159966BA00995337 /* CollaboratorsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -173,6 +194,9 @@
 				B822DC701592CB220041E429 /* SelectedApplicationViewController.xib */,
 				B822DC6B1592CB020041E429 /* ApplicationMenuViewController.xib */,
 				B89ADAEC15941F37000143D0 /* NewAppViewController.xib */,
+				B848438915995DE700995337 /* BuildsViewController.xib */,
+				B848438F1599652000995337 /* ErrorsViewController.xib */,
+				B8484394159966BA00995337 /* CollaboratorsViewController.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -267,6 +291,9 @@
 				B822DC6D1592CB020041E429 /* ApplicationMenuViewController.xib in Resources */,
 				B822DC721592CB220041E429 /* SelectedApplicationViewController.xib in Resources */,
 				B89ADAEE15941F37000143D0 /* NewAppViewController.xib in Resources */,
+				B848438B15995DE700995337 /* BuildsViewController.xib in Resources */,
+				B84843911599652100995337 /* ErrorsViewController.xib in Resources */,
+				B8484396159966BA00995337 /* CollaboratorsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +336,9 @@
 				B84C3963159436DC00510322 /* Exception.m in Sources */,
 				B84C39661594380E00510322 /* Collaborator.m in Sources */,
 				B84C39691594389300510322 /* User.m in Sources */,
+				B848438A15995DE700995337 /* BuildsViewController.m in Sources */,
+				B84843901599652100995337 /* ErrorsViewController.m in Sources */,
+				B8484395159966BA00995337 /* CollaboratorsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
