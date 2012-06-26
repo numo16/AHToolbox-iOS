@@ -72,15 +72,6 @@
 		A5596ACA7F1B42758B0806A3 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFNetworking/AFURLConnectionOperation.h; sourceTree = SOURCE_ROOT; };
 		B5506D74898D41B39F2EC1E8 /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		B7C64E265C77469C82AD0C2B /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = MBProgressHUD/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
-		B822DC451592B9050041E429 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
-		B822DC461592B9050041E429 /* Blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue@2x.png"; sourceTree = "<group>"; };
-		B822DC471592B9050041E429 /* MKInfoPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MKInfoPanel.xib; sourceTree = "<group>"; };
-		B822DC481592B9050041E429 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
-		B822DC491592B9050041E429 /* Red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red@2x.png"; sourceTree = "<group>"; };
-		B822DC4A1592B9050041E429 /* Tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tick.png; sourceTree = "<group>"; };
-		B822DC4B1592B9050041E429 /* Tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tick@2x.png"; sourceTree = "<group>"; };
-		B822DC4C1592B9050041E429 /* Warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Warning.png; sourceTree = "<group>"; };
-		B822DC4D1592B9050041E429 /* Warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Warning@2x.png"; sourceTree = "<group>"; };
 		C44CD95056B94D408392EE5A /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFXMLRequestOperation.h; path = AFNetworking/AFNetworking/AFXMLRequestOperation.h; sourceTree = SOURCE_ROOT; };
 		C6FABA4DA4BB478BBD0F327B /* AFHTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = AFNetworking/AFNetworking/AFHTTPClient.m; sourceTree = SOURCE_ROOT; };
 		D93299493F0449BF88BF63CA /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h; sourceTree = SOURCE_ROOT; };
@@ -200,15 +191,6 @@
 		9289E948F55540EBA0CFC56F /* MKInfoPanel */ = {
 			isa = PBXGroup;
 			children = (
-				B822DC451592B9050041E429 /* Blue.png */,
-				B822DC461592B9050041E429 /* Blue@2x.png */,
-				B822DC471592B9050041E429 /* MKInfoPanel.xib */,
-				B822DC481592B9050041E429 /* Red.png */,
-				B822DC491592B9050041E429 /* Red@2x.png */,
-				B822DC4A1592B9050041E429 /* Tick.png */,
-				B822DC4B1592B9050041E429 /* Tick@2x.png */,
-				B822DC4C1592B9050041E429 /* Warning.png */,
-				B822DC4D1592B9050041E429 /* Warning@2x.png */,
 				9C00DD4FC168496893CD5FCA /* MKInfoPanel.h */,
 				46B3853716A14BFAAA27A14B /* MKInfoPanel.m */,
 			);

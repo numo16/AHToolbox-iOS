@@ -29,6 +29,19 @@
 		B84843911599652100995337 /* ErrorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B848438F1599652000995337 /* ErrorsViewController.xib */; };
 		B8484395159966BA00995337 /* CollaboratorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8484393159966BA00995337 /* CollaboratorsViewController.m */; };
 		B8484396159966BA00995337 /* CollaboratorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8484394159966BA00995337 /* CollaboratorsViewController.xib */; };
+		B848439A1599700B00995337 /* SelectedBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84843981599700B00995337 /* SelectedBuildViewController.m */; };
+		B848439B1599700B00995337 /* SelectedBuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B84843991599700B00995337 /* SelectedBuildViewController.xib */; };
+		B84843A0159972D900995337 /* PXComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B848439E159972D900995337 /* PXComponentKit.framework */; };
+		B84843A1159972D900995337 /* PXShapeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B848439F159972D900995337 /* PXShapeKit.framework */; };
+		B84843AC159978D300995337 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B84843A3159978D300995337 /* Blue.png */; };
+		B84843AD159978D300995337 /* Blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84843A4159978D300995337 /* Blue@2x.png */; };
+		B84843AE159978D300995337 /* MKInfoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B84843A5159978D300995337 /* MKInfoPanel.xib */; };
+		B84843AF159978D300995337 /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = B84843A6159978D300995337 /* Red.png */; };
+		B84843B0159978D300995337 /* Red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84843A7159978D300995337 /* Red@2x.png */; };
+		B84843B1159978D300995337 /* Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = B84843A8159978D300995337 /* Tick.png */; };
+		B84843B2159978D300995337 /* Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84843A9159978D300995337 /* Tick@2x.png */; };
+		B84843B3159978D300995337 /* Warning.png in Resources */ = {isa = PBXBuildFile; fileRef = B84843AA159978D300995337 /* Warning.png */; };
+		B84843B4159978D300995337 /* Warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84843AB159978D300995337 /* Warning@2x.png */; };
 		B84C39591594344300510322 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C39581594344300510322 /* Build.m */; };
 		B84C395D1594353200510322 /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C395C1594353200510322 /* Commit.m */; };
 		B84C39601594368800510322 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C395F1594368800510322 /* Error.m */; };
@@ -79,6 +92,20 @@
 		B8484392159966BA00995337 /* CollaboratorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollaboratorsViewController.h; sourceTree = "<group>"; };
 		B8484393159966BA00995337 /* CollaboratorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollaboratorsViewController.m; sourceTree = "<group>"; };
 		B8484394159966BA00995337 /* CollaboratorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollaboratorsViewController.xib; sourceTree = "<group>"; };
+		B84843971599700A00995337 /* SelectedBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedBuildViewController.h; sourceTree = "<group>"; };
+		B84843981599700B00995337 /* SelectedBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedBuildViewController.m; sourceTree = "<group>"; };
+		B84843991599700B00995337 /* SelectedBuildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedBuildViewController.xib; sourceTree = "<group>"; };
+		B848439E159972D900995337 /* PXComponentKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PXComponentKit.framework; sourceTree = "<group>"; };
+		B848439F159972D900995337 /* PXShapeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PXShapeKit.framework; sourceTree = "<group>"; };
+		B84843A3159978D300995337 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blue.png; path = ../Pods/Blue.png; sourceTree = "<group>"; };
+		B84843A4159978D300995337 /* Blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blue@2x.png"; path = "../Pods/Blue@2x.png"; sourceTree = "<group>"; };
+		B84843A5159978D300995337 /* MKInfoPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MKInfoPanel.xib; path = ../Pods/MKInfoPanel.xib; sourceTree = "<group>"; };
+		B84843A6159978D300995337 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Red.png; path = ../Pods/Red.png; sourceTree = "<group>"; };
+		B84843A7159978D300995337 /* Red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Red@2x.png"; path = "../Pods/Red@2x.png"; sourceTree = "<group>"; };
+		B84843A8159978D300995337 /* Tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tick.png; path = ../Pods/Tick.png; sourceTree = "<group>"; };
+		B84843A9159978D300995337 /* Tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tick@2x.png"; path = "../Pods/Tick@2x.png"; sourceTree = "<group>"; };
+		B84843AA159978D300995337 /* Warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Warning.png; path = ../Pods/Warning.png; sourceTree = "<group>"; };
+		B84843AB159978D300995337 /* Warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Warning@2x.png"; path = "../Pods/Warning@2x.png"; sourceTree = "<group>"; };
 		B84C39571594344300510322 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Build.h; sourceTree = "<group>"; };
 		B84C39581594344300510322 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Build.m; sourceTree = "<group>"; };
 		B84C395B1594353200510322 /* Commit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commit.h; sourceTree = "<group>"; };
@@ -106,6 +133,8 @@
 				B8229F2A159179E2006AEE53 /* Foundation.framework in Frameworks */,
 				B8229F2C159179E2006AEE53 /* CoreGraphics.framework in Frameworks */,
 				A8D37657C7C74728B47D943D /* libPods.a in Frameworks */,
+				B84843A0159972D900995337 /* PXComponentKit.framework in Frameworks */,
+				B84843A1159972D900995337 /* PXShapeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +162,8 @@
 		B8229F26159179E2006AEE53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B848439E159972D900995337 /* PXComponentKit.framework */,
+				B848439F159972D900995337 /* PXShapeKit.framework */,
 				B8229F5115917CB8006AEE53 /* QuartzCore.framework */,
 				B8229F27159179E2006AEE53 /* UIKit.framework */,
 				B8229F29159179E2006AEE53 /* Foundation.framework */,
@@ -145,6 +176,7 @@
 		B8229F2D159179E2006AEE53 /* AHToolbox */ = {
 			isa = PBXGroup;
 			children = (
+				B84843A2159978C400995337 /* Resources */,
 				B822DC761592CD9C0041E429 /* Domain */,
 				B8229F4E15917B48006AEE53 /* Helpers */,
 				B8229F4D15917B42006AEE53 /* Xib */,
@@ -184,6 +216,8 @@
 				B848438E1599652000995337 /* ErrorsViewController.m */,
 				B8484392159966BA00995337 /* CollaboratorsViewController.h */,
 				B8484393159966BA00995337 /* CollaboratorsViewController.m */,
+				B84843971599700A00995337 /* SelectedBuildViewController.h */,
+				B84843981599700B00995337 /* SelectedBuildViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -197,6 +231,7 @@
 				B848438915995DE700995337 /* BuildsViewController.xib */,
 				B848438F1599652000995337 /* ErrorsViewController.xib */,
 				B8484394159966BA00995337 /* CollaboratorsViewController.xib */,
+				B84843991599700B00995337 /* SelectedBuildViewController.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -234,6 +269,22 @@
 				B84C39681594389300510322 /* User.m */,
 			);
 			name = Domain;
+			sourceTree = "<group>";
+		};
+		B84843A2159978C400995337 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B84843A3159978D300995337 /* Blue.png */,
+				B84843A4159978D300995337 /* Blue@2x.png */,
+				B84843A5159978D300995337 /* MKInfoPanel.xib */,
+				B84843A6159978D300995337 /* Red.png */,
+				B84843A7159978D300995337 /* Red@2x.png */,
+				B84843A8159978D300995337 /* Tick.png */,
+				B84843A9159978D300995337 /* Tick@2x.png */,
+				B84843AA159978D300995337 /* Warning.png */,
+				B84843AB159978D300995337 /* Warning@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +345,16 @@
 				B848438B15995DE700995337 /* BuildsViewController.xib in Resources */,
 				B84843911599652100995337 /* ErrorsViewController.xib in Resources */,
 				B8484396159966BA00995337 /* CollaboratorsViewController.xib in Resources */,
+				B848439B1599700B00995337 /* SelectedBuildViewController.xib in Resources */,
+				B84843AC159978D300995337 /* Blue.png in Resources */,
+				B84843AD159978D300995337 /* Blue@2x.png in Resources */,
+				B84843AE159978D300995337 /* MKInfoPanel.xib in Resources */,
+				B84843AF159978D300995337 /* Red.png in Resources */,
+				B84843B0159978D300995337 /* Red@2x.png in Resources */,
+				B84843B1159978D300995337 /* Tick.png in Resources */,
+				B84843B2159978D300995337 /* Tick@2x.png in Resources */,
+				B84843B3159978D300995337 /* Warning.png in Resources */,
+				B84843B4159978D300995337 /* Warning@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +400,7 @@
 				B848438A15995DE700995337 /* BuildsViewController.m in Sources */,
 				B84843901599652100995337 /* ErrorsViewController.m in Sources */,
 				B8484395159966BA00995337 /* CollaboratorsViewController.m in Sources */,
+				B848439A1599700B00995337 /* SelectedBuildViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +468,10 @@
 			baseConfigurationReference = 9B12595EE8ED48FC8B726C36 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AHToolbox/AHToolbox-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -421,6 +487,10 @@
 			baseConfigurationReference = 9B12595EE8ED48FC8B726C36 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AHToolbox/AHToolbox-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

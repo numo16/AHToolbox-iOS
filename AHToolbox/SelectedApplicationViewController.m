@@ -238,6 +238,7 @@
   if (indexPath.row == 0) {
     BuildsViewController *vc = [[BuildsViewController alloc] init];
     vc.builds = builds;
+    vc.app = app;
     [self.navigationController pushViewController:vc animated:YES];
   } else if (indexPath.row == 1) {
     ErrorsViewController *vc = [[ErrorsViewController alloc] init];

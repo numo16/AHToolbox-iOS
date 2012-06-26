@@ -8,13 +8,14 @@
 
 #import "BuildsViewController.h"
 #import "Build.h"
+#import "SelectedBuildViewController.h"
 
 @interface BuildsViewController ()
 
 @end
 
 @implementation BuildsViewController
-@synthesize tableview, builds;
+@synthesize tableview, builds, app;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,6 +63,8 @@
   
   if(!cell) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ri];
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   }
   
   NSMutableDictionary *b = [builds objectAtIndex:indexPath.row];
@@ -74,6 +77,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  
+  NSDictionary *build = [builds objectAtIndex:indexPath.row];
+  
+  SelectedBuildViewController *vc = [[SelectedBuildViewController alloc] init];
+  vc.build = build;
+  vc.app = app;
+  
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
