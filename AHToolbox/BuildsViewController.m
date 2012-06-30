@@ -7,7 +7,6 @@
 //
 
 #import "BuildsViewController.h"
-#import "Build.h"
 #import "SelectedBuildViewController.h"
 
 @interface BuildsViewController ()

@@ -41,7 +41,7 @@
 - (void)startAuthorize {
   NSLog(@"Starting authorization");
   
-  if([UserDefaults objectForKey:@"oauth_token"] == nil) {
+//  if([UserDefaults objectForKey:@"oauth_token"] == nil) {
   
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/user/authorizations/new?client_id=%@&redirect_uri=%@", [NSString stringWithCString:kAH_BASE_URL encoding:NSUTF8StringEncoding], [NSString stringWithCString:kAH_CLIENT_ID encoding:NSUTF8StringEncoding], [NSString stringWithCString:kAH_REDIRECT encoding:NSUTF8StringEncoding]]];
     
@@ -49,17 +49,17 @@
     if (!result) {
       NSLog(@"*** %s: cannot open url \"%@\"", __PRETTY_FUNCTION__, url);
     }
-  } else {
-    token = [UserDefaults stringForKey:@"oauth_token"];
-    
-    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", token]];
-    
-    [self setDefaultHeader:@"Accept" value:@"application/json"];
-    [self setDefaultHeader:@"Content-type" value:@"application/json"];
-    
-    NSLog(@"Token exists, %@, setting auth value and moving on", token);
-    NSLog(@"Header: %@ & %@", [self defaultValueForHeader:@"Authorization"], [self defaultValueForHeader:@"Accept"]);
-  }
+//  } else {
+//    token = [UserDefaults stringForKey:@"oauth_token"];
+//    
+//    [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", token]];
+//    
+//    [self setDefaultHeader:@"Accept" value:@"application/json"];
+//    [self setDefaultHeader:@"Content-type" value:@"application/json"];
+//    
+//    NSLog(@"Token exists, %@, setting auth value and moving on", token);
+//    NSLog(@"Header: %@ & %@", [self defaultValueForHeader:@"Authorization"], [self defaultValueForHeader:@"Accept"]);
+//  }
 }
 
 - (BOOL)handleOpenURL:(NSURL *)url {
@@ -81,7 +81,7 @@
     
     [c setDefaultHeader:@"Accept" value:@"application/json"];
     
-    [UserDefaults setValue:[parser valueForVariable:@"access_token"] forKey:@"oauth_token"];
+//    [UserDefaults setValue:[parser valueForVariable:@"access_token"] forKey:@"oauth_token"];
 
     c.token = [parser valueForVariable:@"access_token"];
     
